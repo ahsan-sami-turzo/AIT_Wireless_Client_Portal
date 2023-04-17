@@ -6,8 +6,9 @@ WORKDIR /app
 COPY package*.json ./
 # install project dependencies
 RUN npm install
+RUN npm build
 # copy project files and folders to the current working directory (i.e. 'app' folder)
 COPY . .
 # build app for production with minification
 EXPOSE 8080
-CMD ["npm", "run", "build"]
+CMD ["npm", "run", "serve"]
